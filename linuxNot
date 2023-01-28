@@ -1,0 +1,364 @@
+Linux Dosya Sistemi
+• Kök Dizin(/) : Dosya hiyerarşisinde en üstte bulunan
+dizindir.
+• /bin : Genel kullanicilarin kullanabileceği komutlara ait
+dosyalari içerir. (ör: ls, mkdir, cp, vb.)
+• /sbin: Sadece root kullanicisinin kullanabileceği komutlara
+ait dosyalari içerir. (ör: init, getty, update, vb.)
+• /lib: kütüphane dosyalarini içerir.
+• /boot: Sistem açılışında kullanılan dosyaları içerir.
+• /dev: Giriş Çıkış dosyalarını içerir.
+• /usr: Tüm kullanıcılara paylaşılan verileri içerir.
+(programlar, komutlar, kütüphaneler vb.)
+
+
+***man komutu: Parametre olarak aldığı komutun
+manuel bilgisini ekranda gösterir.
+• man ls
+• man pwd
+
+
+pwd
+• pwd komutu: Print working directory ‘in kısaltmasıdır.
+• İçinde çalışılan dizinin adresini gösterir.
+• Konum genellikle bir bölme işaretiyle (/) başlar.
+• /home/kullaniciadi
+
+
+cd
+• cd komutu: change directory ‘in kısaltmasıdır. Dizinler
+arası geçişi sağlar.
+• cd klasor adı
+• cd ..
+• cd gecmekİsteğinizDizininAdresi
+
+
+touch
+• touch komutu: dosya oluşturmak için kullanılan
+komuttur.
+• touch dosyaAdi
+• touch dosyaAdi1 dosyaAdi2 dosyaAdi3
+
+
+s
+• ls komutu: Bulunduğunuz dizindeki dosya ve dizinleri yatay olarak
+listeler.
+• ls -l : Bulunduğunuz dizindeki dosya ve dizinleri dikey ve ayrıntılı
+olarak listeler.
+• ls -a : Bulunduğunuz dizindeki dosya ve dizinleri yatay olarak listeler.
+Ek olarak gizli dosya ve dizinleri de gösterir.
+• ls -l -h :Bulunduğunuz dizindeki dosya ve dizinleri dikey ve ayrıntılı
+olarak listeler. Boyutu KB-MB-GB cinsinden gösterir
+
+
+ln
+• ln komutu: Link dosyası oluşturma komutudur.
+• Kullanım:
+• ln -s linkinAdı
+
+cp
+• cp komutu: Dosya ve dizin kopyalamak için kullanılır.
+• cp kaynakDosya Hedef
+• cp abc.txt /tmp
+• cp -r kaynakDizin hedefDizin
+• cp -r klasor1 /home
+
+mv
+• mv komutu: Dosya taşımak ve yeniden adlandırmak
+için kullanılır.
+• mv kaynakDosya Hedef
+• mv abc.txt /klasorhedef
+• mv abc.txt def.txt
+• Dosyanın adını değiştirir
+
+
+mkdir
+• mkdir komutu: Make directory ‘in kısaltamasıdır. Yeni
+klasör oluşturmak için kullanılır.
+• mkdir klasorAdı
+• mkdir klasorAdı1 klasorAdı2 klasorAdı3
+• mkdir ../../klasorAdı1
+• mkdir -p klasorAdı1/klasorAdı2/klasorAdı3
+• mkdir -p aa1/{bb1/cc1/{dd1,dd2,dd3},bb2,bb3,bb4}
+
+rm / rmdir
+• rm komutu: Remove ‘un kısaltmasıdır. Dosya silmek
+için kullanılır.
+• rm dosyaAdi
+• rmdir komutu: Dizin/klasör silmek için kullanılır.
+• rmdir klasorAdi -> klasör boş ise
+• rmdir klasor1/klasor2 -> içerdeki klasörü siler.
+• rmdir –p klasor1/klasor2/klasor3 -> klasörler boş ve içiçe
+ise hepsini siler
+• rm –r klasorAdı -> klasör dolu ise
+
+rm
+• rm komutunun aldığı parametreler:
+• -i: dosya veya klasörun silinmesi icin kullanıcıdan onay ister
+• -f: dosya veya klasörun silinmesi icin kullanıcıdan onay istemez.
+• -r: klasör silinirken içindeki alt klasor ve dosyaların da silinmesini
+sağla
+
+
+cat
+• cat komutu: Standart çıktıdaki (sdout) bir dosyanın içeriğini
+görmek için kullanılır.
+• cat dosyaadi dosyanın içeriğini görüntüler.
+• cat > dosyaadi yeni bir dosya oluşturur (CTRL+D)
+• cat dosyaadi1 dosyaadi2> dosyaadi3 iki dosyayı (1 ve 2) birleştir
+ve sonucu yeni bir dosyada (3) depolar
+• Bir dosyayı büyük veya küçük karakterli olarak değiştirmek için cat
+dosyadi | tr a-z A-Z >sonuc.tx
+cat
+
+more
+• more komutu: Dosyanın içeriğini sayfa sayfa gösterir.
+• less komutu: Dosyanın içeriği aşağı ve yukarı yön
+tuşları ile ilerleyecek şekilde gösterir.
+• more dosyaAdi
+• less dosyaAdi
+
+
+tac
+• tac komutu: Dosyanın içetacriğini sondan başa doğru
+gösterir.
+• rev komutu: Dosyanın içeriğini her satırı ters çevirerek
+gösterir.
+• tac dosyaAdi
+• rev dosyaAdi
+
+
+head
+• head komutu: Dosyanın içeriğinin baştan belirtilen sayı
+kadar kısmının gösterilmesini sağlar.
+• Default değeri 10 dur.
+• head -5 dosyaAdi
+• head dosyaAdi
+
+tail
+• tail komutu: Dosyanın içeriğinin sondan belirtilen sayı
+kadar gösterilmesini sağlar.
+• Default değeri 10 dur.
+• tail -5 dosyaAdi
+• tail dosyaAdi
+
+diff
+• diff komutu: difference‘ın kısaltılmışı olan diff komutu iki dosyanın
+içeriğini satır satır karşılaştırır.
+• diff dosya1.ext dosya2.ext
+
+>,>>
+• ls -a>deneme → ls -a komutunun çıktısını deneme
+isimli dosyaya yönlendirir. Eğer dosya yoksa deneme
+isimli dosya oluşturur. Varsa üzerine yazar.
+• ls -a>>deneme → ls -a komutunun çıktısını deneme
+isimli dosyaya yönlendirir. Eğer dosya yoksa deneme
+isimli dosya oluşturur. Varsa dosyanın sonuna ekler.
+
+sort
+• sort komutu: Dosyanın ya da farklı bir komuttan gelen
+bir girdinin içeriği sıralanabilir.
+• sort dosyaAdi
+• sort -r dosyaAdi -> tersten
+• sort -u dosyaAdi -> unique
+
+wc
+• wc komutu: Bir dosyadaki veya komutun çıktısındaki
+satır, karakter ve kelime sayılarını bulmak için kullanılır.
+• wc dosyaAdi
+• wc -l dosyaAdi -> line
+• wc -w dosyaAdi -> word
+• wc –c dosyaAdi -> byte counts
+
+pipe
+• |(pipe) işareti: bir komutun çıktısı diğer bir komuta
+girdi olarak gönderilebilir.
+• cat dosyaAdi | wc -l
+• ls -al | more
+• sort -r dosyaAdi | tail -5 | wc -w
+
+
+cal
+• cal komutu: Takvim komutudur. Default olarak
+bilgisayarın güncel takvimine göre içinde bulunan ay
+için takvim gösterir.
+• cal
+• cal ay yıl -> cal Kasım 2021
+• cal yıl -> cal 2021
+
+locate
+• locate komutu: Bu komutu tıpkı Windows’daki search komutu gibi bir
+dosyanın konumunu bulmak için kullanabilirsiniz.
+• locate -i lab.txt
+• locate -i lab*.txt
+• -i case sensitive olmadan arama yapmak için kullanılır.
+
+find
+• find komutu: aranan dosyanın bulunduğu dizini
+hatırlanmadığı ve dosya adının bir kısmının hatırlandığı
+durumlarda kullanılabilir.
+• find /home -name a2.txt
+• find /usr -name words
+• find /home/feyza -name “*.txt”
+• find /etc -name “*ene*”
+• find /etc –type d
+
+grep
+• grep komutu: Belirtilen dosya içerisinde arama yapar.
+• Aramasının sonuçlarını listeler.
+• grep kelime dosyaAdi
+• grep -i kelime dosyaAdı (case sensitive arama yapar)
+• grep –v kelime dosyaAdı (kelime dışındakileri listeler)
+• grep -r kelime (tüm dosyalarda arama yapar)
+• -v: Aranılan kelimeyi içermeyen satırlar listelenir.
+• -i: Arama sırasında büyük/küçük harf duyarlılığı kaldırılır.
+• -r: Verilen dizinin alt dizinlerinde de arama yapar.
+• -n: Aranan kelimenin geçtiği satır numarasını da gösterir.
+• -c: Belirtilern dizinde aradığınız kelimenin kaç defa geçtiğini
+ gösterir
+
+
+ ping
+• ping komutu: ping komutunu bir sunucuya bağlantınızı
+kontrol etmek için kullanın.
+• ping google.com (Google’a bağlanıp bağlanamadığınızı öğrenebilir
+ve yanıt süresini ölçebilirsiniz)
+
+
+wget
+• wget komutu: wget komutunun yardımıyla İnternet’ten
+dosya bile indirebilirsiniz. Bunu yapmak için wget ve daha
+sonra ise indirmek istediğiniz dosyanın bağlantısını girin.
+• wget [URL]
+• wget https://www.eea.europa.eu/data-and-maps/data/airbase-
+the-european-air-quality-
+database/turkey/turkey/at_download/file
+
+
+top, ps
+• top: Çalışan prosesleri listeler
+• top
+• top –o PID
+• top –o %CPU
+• ps komutu: çalışmakta olan processleri (süreçleri)
+listeler.
+• ps -aux | grep feyza
+
+
+kill
+• kill komutu: çalışmakta olan processi sonlandırmak
+için kullanılır.
+• kill (-sinyal) PID
+• kill -9 1125
+
+
+
+Dosya Sıkıştırma Yöntemleri
+• zip ile sıkıştırma:
+• zip -r deneme.zip dosyaAdi ya da dizinAdi
+• zip dosyasını açma:
+• unzip deneme.zip
+• tar.gz olarak sıkıştırma:
+• tar cvzf deneme.tar.gz dosyaAdı ya da dizinAdı
+• tar.gz dosyasını açma:
+• tar xvzf deneme.tar.gz
+
+Dosya Sıkıştırma Yöntemleri
+• tar.bz2 olarak sıkıştırma:
+• tar cvjf deneme.tar.bz2 dosyaAdi ya da dizinAdi
+• tar.bz2 dosyasını açma:
+• tar xvjf deneme.tar.bz2
+• rar ile sıkıştırma:
+• rar a -ap deneme.rar dosyaAdi ya da dizinAdi
+• rar dosyasını açma:
+• unrar e deneme.rar
+• unrar x deneme.rar
+
+
+
+
+Linux Kullanıcı Yönetimi ve Dosya / Dizin İzinleri
+
+• Dosya sahibinin izinleri ( Dosyanın sahibi : u)
+• Dosya grubunun izinleri ( Kullanıcı grubu : g)
+• Diğer kullanıcıların izinleri ( Diğer kullanıcılar : o)
+• - rwxrw-r--
+• “-” : Normal dosya
+• “d” : Dizin
+• “l” : Başka bir dosyayı gösteren link dosyaları
+
+
+Linux Kullanıcı Yönetimi ve Dosya / Dizin İzinleri
+
+• Okuma (r)
+• Dosya içeriğini görebilme
+• Dosya listesini görebilme(klasörler için)
+• Yazma (w)
+• Dosyaya yazma aynı zamanda dosyayı silme izni
+• Klasör içinde dosya veya alt klasör oluşturma
+• Çalıştırma (x)
+• Dosyayı çalıştırma
+• Bu klasöre geçebilme
+
+
+Linux Kullanıcı Yönetimi ve Dosya / Dizin İzinleri
+
+
+•u – dosya sahibini (user)
+•g – dosya sahibinin grubunu (group)
+•o – diğer kullanıcıları (others)
+•a – tüm hakları (a)
+•+ – yetki ekleme
+•= – yetki eşitleme
+•– – yetki çıkarma
+•r – okuma yetkisi (read)
+•w – yazma yetkisi (write)
+•x – çalıştırma yetkisi (execute)
+
+
+
+chmod
+
+• chmod komutu: ‘change mod’ dosya ve dizin erişim
+yetkilerini belirlemek için kullanılır.
+• chmod a=rwx dosya -> tüm kullanıcılara yetki verir.
+• chmod u+rwx,g-w,o-rwx
+• chmod go-rwx deneme
+• chmod u+rwx deneme
+• chmod 674 dosya
+• chmod –R 756 deneme (R : Alt klasör ve dosyalardaki izinleri
+değiştirir.)
+
+
+chown
+
+• chown komutu: dosya ve dizin sahibini değiştirmek
+için kullanılır.
+• sudo chown yeniSahip dosya/dizin
+• Önceki durum:
+• -rwxr-xr-x ahmet users .....deneme
+• sudo chown mehmet deneme
+• -rwxr-xr-x mehmet users .....deneme
+
+
+chgrp
+
+• chgrp komutu: dosya ve dizin grubunu değiştirmek için
+kullanılır.
+• sudo chgrp yeniGrup dosya/dizin
+• Önceki durum:
+• -rwxr-xr-x ahmet users .....deneme
+• sudo chgrp aybike deneme
+• -rwxr-xr-x ahmet aybike .....deneme
+
+
+adduser,deluser,addgroup,delgroup
+
+• adduser,deluser komutları: sisteme yeni kullanıcı eklemek ve
+silmek için kullanılan komutlardır.
+• sudo adduser kullanıcıAdi
+• sudo deluser kullanıcıAdi
+• addgroup,delgroup komutları: sisteme yeni grup eklemek ve
+silmek için kullanılan komutlardır.
+• sudo addgroup grubunAdi
+• sudo delgroup grubunAd

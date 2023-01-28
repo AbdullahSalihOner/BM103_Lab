@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid ödev</title>
+</head>
+
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    #header {
+        background-color: #838383;
+        padding: 30px;
+        text-align: center;
+        font-size: 55px;
+        color: #fff;
+    }
+
+    #footer {
+        background-color: #838383;
+        padding: 30px;
+        text-align: center;
+        font-size: 25px;
+        color: #fff;
+    }
+
+    #center {
+        display: grid;
+        grid-template-columns: 1fr 3fr;
+        grid-gap: 10px;
+    }
+
+    #center ul {
+        list-style: none;
+    }
+
+    #center #rightSide {
+        padding: 10px;
+
+    }
+
+    #center #leftSide {
+        background: #b7b7b7;
+        padding: 10px;
+    }
+</style>
+
+<body>
+
+    <div id="header">
+        <p>Cities</p>
+    </div>
+
+    <div id="center">
+        <div id="leftSide">
+            <ul>
+                <li><a href="#">London</a></li>
+                <li><a href="#">Paris</a></li>
+                <li><a href="#">Tokyo</a></li>
+            </ul>
+        </div>
+        <div id="rightSide">
+            <h1>London</h1>
+            <p>London is the capital and largest city of England and the United Kingdom, with a population of just under 9 million.[1] It stands on the River Thames in south-east England at the head of a 50-mile (80 km) estuary down to the North Sea, and has been a major settlement for two millennia.</p>
+        </div>
+    </div>
+
+    <div id="footer">
+        <p>Footer</p>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <style>
+    table,
+    th,
+    td {
+      border: 1px solid black;
+      border-collapse: collapse;
+      border-radius: 10px;
+      border-spacing: 30px;
+    }
+    th,
+    td {
+      border-color: #e00e2a;
+      border-style: dotted;
+      text-align: left;
+      padding-top: 10px;
+      padding-bottom: 20px;
+      padding-left: 30px;
+      padding-right: 40px;
+    }
+    tr:nth-child(even) {
+      background-color: #d6eeee;
+    }
+    td:nth-child(even) {
+      background-color: #3dd067;
+    }
+    tr {
+      border-bottom: 1px solid #ddd;
+    }
+    tr:hover {
+      background-color: aqua;
+    }
+  </style>
+  <body>
+    
+
+    <p>Another partt ;</p>
+    <br />
+    <table style="width: 100%">
+      <colgroup>
+        <col span="2" style="background-color: #d6eeee" />
+        <col span="2" style="background-color: #e6a606" />
+        <col span="3" style="visibility: collapse">
+      </colgroup>
+
+      <caption>
+        HEY WHAT's UP
+      </caption>
+      <tr>
+        <th style="width: 70%">Person 1</th>
+        <th colspan="2">Person 2</th>
+        <th rowspan="2">Person 3</th>
+      </tr>
+      <tr style="height: 200px">
+        <td>Emil</td>
+        <td>Tobias</td>
+        <td>Linus</td>
+      </tr>
+      <tr>
+        <td>16</td>
+        <td>14</td>
+        <td>10</td>
+      </tr>
+    </table>
+  </body>
+</html>

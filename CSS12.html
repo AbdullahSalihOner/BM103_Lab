@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body {
+        background-color: lightgrey;
+        color: blue;
+      }
+      h1 {
+        background-color: black;
+        color: white;
+        text-align: center;
+      }
+      div {
+        background-color: blue;
+        color: white;
+        text-align: right;
+      }
+      p {
+        margin: 30px;
+        border: 1px solid black;
+        outline: 1px solid red;
+        outline-offset: 15px;
+        text-align: justify;
+      }
+      p.ex1 {
+        direction: rtl;
+        unicode-bidi: bidi-override;
+        text-indent: 50px;
+      }
+
+      h2 {
+        text-decoration: overline;
+      }
+      h3 {
+        text-decoration: line-through;
+      }
+      h4 {
+        text-decoration: underline;
+      }
+
+      p.uppercase {
+        text-transform: uppercase;
+      }
+      p.lowercase {
+        text-transform: lowercase;
+      }
+      p.capitalize {
+        text-transform: capitalize;
+      }
+
+      .p1 {
+        font-family: "Times New Roman", Times, serif;
+      }
+      .p2 {
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      .p3 {
+        font-family: "Lucida Console", "Courier New", monospace;
+      }
+
+      p.a {
+        font: 20px Arial, sans-serif;
+      }
+      p.b {
+        font: italic bold 30px Georgia, serif;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>The outline-offset Property</h2>
+    <p>This paragraph has an outline 15px outside the border edge.</p>
+    <h1>This is a Heading</h1>
+    <p>This page has a grey background color and a blue text.</p>
+    <div>This is a div.</div>
+
+    <p>This is the default text direction.</p>
+    <p class="ex1">This is right-to-left text direction.</p>
+
+    <h1>Some different text decorations</h1>
+    <h2>Overline text decoration</h2>
+    <h3>Line-through text decoration</h3>
+    <h4>Underline text decoration</h4>
+
+    <p class="uppercase">This text is transformed to uppercase.</p>
+    <p class="lowercase">This text is transformed to lowercase.</p>
+    <p class="capitalize">This text is capitalized.</p>
+
+    <p>
+      In my younger and more vulnerable years my father gave me some advice that
+      I've been turning over in my mind ever since. 'Whenever you feel like
+      criticizing anyone,' he told me, 'just remember that all the people in
+      this world haven't had the advantages that you've had.'
+    </p>
+
+    <h1>CSS font-family</h1>
+    <p class="p1">This is a paragraph, shown in the Times New Roman font.</p>
+    <p class="p2">This is a paragraph, shown in the Arial font.</p>
+    <p class="p3">This is a paragraph, shown in the Lucida Console font.</p>
+
+    <p class="a">
+      This is a paragraph. The font size is set to 20 pixels, and the font
+      family is Arial.
+    </p>
+    <p class="b">
+      This is a paragraph. The font is set to italic and bold, the font size is
+      set to 12 pixels, the line height is set to 30 pixels, and the font family
+      is Georgia.
+    </p>
+  </body>
+</html>
